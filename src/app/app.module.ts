@@ -12,6 +12,7 @@ import { ListComponent } from './list/list.component';
 import { NavComponent } from './nav/nav.component';
 import {ApiService} from "./api.service";
 import {ServiceService} from "./service.service";
+import {CategoryService} from "./category.service";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {ServiceService} from "./service.service";
     AuthGuardService,
     AuthService,
     ApiService,
-    ServiceService
+    ServiceService,
+    CategoryService
   ],
   bootstrap: [AppComponent]
 })
