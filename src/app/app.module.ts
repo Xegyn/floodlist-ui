@@ -10,6 +10,8 @@ import {AppRoutingModule} from "./app-routing.module";
 import {AuthService} from "./auth.service";
 import { ListComponent } from './list/list.component';
 import { NavComponent } from './nav/nav.component';
+import {ApiService} from "./api.service";
+import {ServiceService} from "./service.service";
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { NavComponent } from './nav/nav.component';
   ],
   providers: [
     AuthGuardService,
-    AuthService
+    AuthService,
+    ApiService,
+    ServiceService
   ],
   bootstrap: [AppComponent]
 })
