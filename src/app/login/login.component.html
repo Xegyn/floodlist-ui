@@ -1,15 +1,19 @@
 <div class="container-fluid">
-  Please log in.
-
-  <form>
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input type="text" id="email">
+  <div class="row">
+    <div class="col-md-4">
     </div>
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input type="password" id="password">
+    <div class="col-md-4">
+      <form>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" id="email" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" class="form-control">
+        </div>
+        <button type="button" class="btn btn-primary btn-block" (click)="login()">Log In</button>
+      </form>
     </div>
-    <button type="button" class="btn btn-primary" (click)="login()">Log In</button>
-  </form>
+  </div>
 </div>

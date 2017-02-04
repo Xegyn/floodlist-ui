@@ -9,12 +9,14 @@ import { AuthGuardService } from "./auth-guard.service";
 import {AppRoutingModule} from "./app-routing.module";
 import {AuthService} from "./auth.service";
 import { ListComponent } from './list/list.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ListComponent
+    ListComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
