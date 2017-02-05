@@ -24,7 +24,7 @@ export class ListComponent implements OnInit {
       })
 
     this.serviceService.getAll()
-      .subscribe((response: Category[]) => {
+      .subscribe((response: Service[]) => {
         this.services = response;
       })
   }

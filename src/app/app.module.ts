@@ -14,6 +14,10 @@ import {ApiService} from "./api.service";
 import {ServiceService} from "./service.service";
 import {CategoryService} from "./category.service";
 
+// RxJS Operators
+import 'rxjs/add/operator/map';
+
+
 @NgModule({
   declarations: [
     AppComponent,

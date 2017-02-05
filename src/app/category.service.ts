@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {ApiService} from "./api.service";
-import {ReplaySubject} from "rxjs";
 import {Category} from "./category";
 
 declare var _;
