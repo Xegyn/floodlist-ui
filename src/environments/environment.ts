@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  apiServer: 'http://floodlist.herokuapp.com'
+  apiServer: 'https://floodlist.herokuapp.com'
 };
