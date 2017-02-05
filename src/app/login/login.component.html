@@ -12,7 +12,7 @@
           <label for="password">Password</label>
           <input type="password" id="password" name="password" class="form-control" [(ngModel)]="password">
         </div>
-        <button type="button" class="btn btn-primary btn-block" (click)="login()">Log In</button>
+        <button type="submit" class="btn btn-primary btn-block" (click)="login()">Log In</button>
         <div class="text-danger" [class.invisible]="!authError">Your email or password is incorrect.</div>
       </form>
     </div>
