@@ -8,6 +8,8 @@ declare var _;
 @Injectable()
 export class CategoryService {
 
+  private activeCategories = [];
+
   constructor(private apiService: ApiService) {
 
   }
@@ -24,6 +26,18 @@ export class CategoryService {
     });
     response.next(categories);
     return response;
+  }
+
+  public toggleCategory(id: number) {
+    if (_.includes(this.activeCategories, id)) {
+      _.remove(this.activeCategories, catId => catId === id);
+    } else {
+      this.activeCategories.push(id);
+    }
+  }
+
+  public isActive(id: number): boolean {
+    return _.includes(this.activeCategories, id)
   }
 
 }
