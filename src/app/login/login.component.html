@@ -6,13 +6,14 @@
       <form>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="text" id="email" class="form-control">
+          <input type="text" id="email" name="email" class="form-control" [(ngModel)]="email">
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" id="password" class="form-control">
+          <input type="password" id="password" name="password" class="form-control" [(ngModel)]="password">
         </div>
         <button type="button" class="btn btn-primary btn-block" (click)="login()">Log In</button>
+        <div class="text-danger" [class.invisible]="!authError">Your email or password is incorrect.</div>
       </form>
     </div>
   </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ServiceService} from "../service.service";
 import {CategoryService} from "../category.service";
 import {Category} from "../category";
+import {Service} from "../service";
 
 @Component({
   selector: 'app-list',
@@ -11,6 +12,7 @@ import {Category} from "../category";
 export class ListComponent implements OnInit {
 
   private categories: Category[];
+  private services: Service[];
 
   constructor(private categoryService: CategoryService,
               private serviceService: ServiceService) { }
@@ -19,6 +21,11 @@ export class ListComponent implements OnInit {
     this.categoryService.getAll()
       .subscribe((response: Category[]) => {
         this.categories = response;
+      })
+
+    this.serviceService.getAll()
+      .subscribe((response: Category[]) => {
+        this.services = response;
       })
   }
 
