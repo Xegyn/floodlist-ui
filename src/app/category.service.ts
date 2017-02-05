@@ -15,17 +15,14 @@ export class CategoryService {
   }
 
   public getAll() {
-    // return this.apiService.get(`v1/public/categories`);
-    let response = new ReplaySubject();
-    let apiResponse = [
-      {id: 1, name: 'Back Office'},
-      {id: 2, name: 'Brand'}
-    ];
-    let categories = _.map(apiResponse, (item) => {
-      return new Category(item.id, item.name);
-    });
-    response.next(categories);
-    return response;
+    return this.apiService.get(`v1/categories`)
+      .map((res) => {
+        let response = res.json();
+        let categories = _.map(response, (item) => {
+          return new Category(item.id, item.name);
+        });
+        return categories;
+      });
   }
 
   public toggleCategory(id: number) {

@@ -29,12 +29,11 @@ export class AuthService {
       `${environment.apiServer}/oauth/token`,
       JSON.stringify(params),
       {headers: new Headers(headers)}
-    );
-
-    request.subscribe((res) => {
+    )
+      .map((res) => {
         let response = res.json();
         this.apiService.setToken(response.access_token);
-        window.sessionStorage.setItem('authenticated', 'true');
+        this.setAuthenticated(true);
         this.router.navigate(['/list']);
       });
 
@@ -42,9 +41,12 @@ export class AuthService {
   }
 
   public logout() {
-    this.authenticated = false;
-    window.sessionStorage.setItem('authenticated', 'false');
+    this.setAuthenticated(false);
     this.router.navigate(['/login']);
   }
 
+  public setAuthenticated(authenticated: boolean) {
+    this.authenticated = authenticated;
+    window.sessionStorage.setItem('authenticated', authenticated.toString());
+  }
 }
