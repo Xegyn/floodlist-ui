@@ -8,7 +8,6 @@
 <div class="container">
   <button *ngFor="let category of categories"
           type="button"
-          data-toggle="button"
           class="btn btn-sm category-button"
           (click)="toggleCategory(category.id)"
           [class.active]="isCategoryActive(category.id)">
